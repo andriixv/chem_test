@@ -1,0 +1,12 @@
+{% extends "chemistry/base.html" %}
+
+{% block content %}
+
+    <div id="form_container">
+        <form action="{% url 'chemistry:edit_question' question.id %}" method='post'>
+            {% csrf_token %}
+            {{ form }}
+            <button name="submit">Зберегти</button>
+        </form>
+    </div>
+{% endblock content %}

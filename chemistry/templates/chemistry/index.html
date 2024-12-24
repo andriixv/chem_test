@@ -1,0 +1,31 @@
+{% extends 'chemistry/base.html' %}
+{% block content %}
+<h2>Не опрацьовані питання:</h2>
+
+<select name="" id="">
+    
+{% for question in questions %}
+    <option>
+        {{question.category_def}}
+    </option>
+{% endfor %}
+
+</select>
+
+<div class="container">  
+    <ul class="questions">
+    {% for question in questions %}
+        <li class="question"><span class="id">{{ question.id|safe }} |</span><span class="text">{{ question.text|safe }}|</span> <span class="cat_def">{{ question.category_def|safe }}</span><span class="edit"><a href="{% url 'chemistry:edit_question' question.id %}">Редагувати</a></span></li>
+    {% endfor %}
+    </ul>
+</div>  
+<!-- <script>
+    let q = '{{questions|escapejs}}';
+    let k = [];
+        for (let question in q){
+            console.log('*')
+            console.log(question)
+        }
+    console.log(q)
+</script> -->
+{% endblock content %}

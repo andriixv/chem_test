@@ -1,0 +1,27 @@
+{% extends 'chemistry/base.html' %} {% block content %}
+
+<div class="container form">
+  <section>
+    <div class="form-container form">
+      <form class="main-form" action="{% url 'chemistry:generator' %}" method="post">
+        <div class="form-fields">{% csrf_token %} {{ form }}</div>
+    
+        <input id="form-submit" type="submit" value="Генерувати" />
+        <button id="form-submit" type="submit" name="generate_pdf">Завантажити PDF</button>
+      </form>
+    </div>
+    <div class="form-container generated">
+      <h1>Знайдено питань: {{ total_questions }}</h1>
+      <ol>
+        {% for q in generated_q.values %}
+            <br>    
+            {% for item in q %}
+                <p>{{item|safe}}</p>
+            {% endfor %} 
+        {% endfor %}
+      </ol>
+    </div>
+    {{list}}
+  </section>
+</div>
+{% endblock content %}

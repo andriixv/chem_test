@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор завдань</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'chemistry/favicon_io/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <!--google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!--styles-->
+    <link rel="stylesheet" href="{% static 'chemistry/styles/style.css' %}">
+  </head>
+  <body>
+    <nav>
+      <a id="logo" href="{% url 'chemistry:index' %}"
+        ><img src="{% static 'chemistry/logo/logo-removebg.png' %}" alt="logo" />Chem
+        test</a
+      >
+      <a href="{% url 'chemistry:index' %}">Всі питання</a>
+      <a href="{% url 'chemistry:add_question' %}"><span class="material-symbols-rounded">
+        add
+        </span> Додати питання</a>
+      <a href="{% url 'chemistry:generator' %}">Генератор</a>
+      <a href="{% url 'chemistry:info' %}">Інфо</a>
+    </nav>
+    {% block content %} {% endblock content %}
+  </body>
+  <footer>
+    <p>Створено <b>AndriiXV</b> {% now "Y" %}</p>
+  </footer>
+</html>
