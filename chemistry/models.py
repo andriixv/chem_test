@@ -24,14 +24,6 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
     
-#Типи питань(рівняння, задача, теорія, тест etc.)
-# class Type(models.Model):
-#     type_name = models.CharField(max_length=50)
-#     class Meta:
-#         verbose_name_plural = 'types'
-#     def __str__(self):
-#         return self.type_name  
-
 #Питання
 class Question(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=31)
