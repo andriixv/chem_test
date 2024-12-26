@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from .models import Grade, Section, Category, Question
 from .forms import QuestionForm, VariantCreationForm
-import locale
+# import locale
 from reportlab.pdfgen import canvas #для створення pdf з питаннями
 import io
 import os
@@ -16,10 +16,9 @@ from reportlab.lib.utils import simpleSplit
 
 import random
 
-try:
-    locale.setlocale(locale.LC_ALL, 'uk_UA')
-except locale.Error:
-    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+
+#locale.setlocale(locale.LC_ALL, 'uk_UA')
+
 
 def index(request):
     #відображення питань          
