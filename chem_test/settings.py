@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2h6)6-2*8=t!9c8q4q91##c((_t$tfrj__ne-=1u2c12*))m*9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chem-test.onrender.com',]
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
