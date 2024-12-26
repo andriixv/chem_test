@@ -133,7 +133,7 @@ def generator(request):
                 variant = [f'Варіант {x+1}'] #вставлення номера варіанта
                 for y in range(numOfQuestions):
                     q = category_questions[random.randint(0, len(category_questions)-1)]
-                    variant.append(f'{str(y+1)+'. ' + q}')
+                    variant.append(f'{str(y+1)+". " + q}')
                     print(variant)
                     category_questions.remove(q)
                     y += 1
